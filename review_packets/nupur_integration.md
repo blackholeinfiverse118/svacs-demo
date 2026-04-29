@@ -273,3 +273,34 @@ Each stage: trace_id generated (UUID4) → transmitted → returned unchanged �
 - `validate_trace_log.txt` + `validate_trace_results.json`
 - `trace_break_test_log.txt`
 - `api/ingestion_server/trace_log.jsonl`
+
+
+## PHASE 4 — SCENARIO VALIDATION
+
+**Date:** 29/04/2026
+**Status:** COMPLETE
+
+### What was done
+- Ran scenario_builder.py — generated all 5 scenario JSON files fresh
+- Ran validate_scenarios.py — 7 checks per scenario
+- Ran full demo stream (--demo flag) → all chunks HTTP 200
+
+### Results (5/5 PASS)
+| Scenario | Vessel | Confidence | Anomaly | Result |
+|---|---|---|---|---|
+| 1 | cargo | high | False | PASS |
+| 2 | speedboat | medium_high | False | PASS |
+| 3 | submarine | medium | False | PASS |
+| 4 | low_confidence | low | False | PASS |
+| 5 | anomaly | unknown | True | PASS |
+
+### Key confirmations
+- cargo → high confidence 
+- anomaly → anomaly_flag=True 
+- trace_id on all scenario chunks 
+- Full demo stream → HTTP 200 all chunks 
+
+### Evidence
+- scenario_validation_log.txt
+- scenario_validation_results.json
+- day4_demo_stream_log.txt

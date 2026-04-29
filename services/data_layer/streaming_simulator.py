@@ -9,7 +9,7 @@ Usage:
   python streaming_simulator.py --vessel cargo --duration 10
   python streaming_simulator.py --scenario scenarios/scenario_1_cargo.json
   python streaming_simulator.py --demo
-  python streaming_simulator.py --vessel speedboat --endpoint http://localhost:8000/ingest
+  python streaming_simulator.py --vessel speedboat --endpoint http://localhost:8000/ingest/signal
 """
 
 import time
